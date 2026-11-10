@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maxime Canguilhem — Chef de projet SI &amp; digital</title>
+<meta name="description" content="Maxime Canguilhem, chef de projet SI & digital. Plus de 10 ans de pilotage de projets : automobile, banque, transport, e-commerce.">
+<meta property="og:title" content="Maxime Canguilhem — Chef de projet SI & digital">
+<meta property="og:description" content="Plus de 10 ans de pilotage de projets SI et digitaux. Ouvrez le classeur.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://maximecanguilhem.fr/">
+<meta property="og:image" content="https://maximecanguilhem.fr/media/ref.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%230f3d3d%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-family=%27Arial%27 font-weight=%27700%27 font-size=%2715%27 fill=%27%237fd3cf%27 text-anchor=%27middle%27%3EMC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@600&display=swap">
+<style>
+:root{--ink:#e9f2f1;--mute:#a9c3c2;--acc:#7fd1cf;--gold:#e3b04b;--deep:#0f3238;--glass:rgba(255,255,255,.07);--line:rgba(255,255,255,.14)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--deep)}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--deep);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+header{position:fixed;inset:0 0 auto 0;z-index:50;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 4vw;background:rgba(8,26,30,.45);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.brand{font-weight:500;letter-spacing:.01em;cursor:pointer;background:none;border:0;color:var(--ink);font:inherit;font-size:15px}
+.brand b{font-weight:800}
+nav{display:flex;gap:6px}
+nav button{background:none;border:0;color:var(--mute);font:inherit;font-size:14px;padding:8px 12px;border-radius:8px;cursor:pointer;position:relative;transition:color .25s}
+nav button:hover{color:var(--ink)}
+nav button.on{color:var(--ink)}
+nav button.on::after{content:"";position:absolute;left:12px;right:12px;bottom:3px;height:2px;border-radius:2px;background:var(--acc)}
+.cta{display:flex;gap:8px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;padding:9px 16px;border-radius:10px;border:1px solid var(--line);transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.08)}
+.btn.pri{background:var(--acc);color:#0b2a2e;border-color:var(--acc)}
+.btn.pri:hover{background:#9be0de}
+.btn svg{width:16px;height:16px}
+#prog{position:absolute;left:0;bottom:-1px;height:2px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--acc),var(--gold))}
+#burger{display:none}
+#track{position:relative}
+#stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+#stage::after{content:"";position:absolute;inset:0;background:#0b1d20;opacity:0;pointer-events:none;transition:opacity .22s ease;z-index:50}
+#stage.jmp::after{opacity:1}
+#bg{position:absolute;inset:0}
+#grain{position:absolute;inset:0;opacity:.06;pointer-events:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+#shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(8,30,34,.8) 0%,rgba(8,30,34,.45) 38%,rgba(8,30,34,0) 62%)}
+@media (max-width:860px){#shade{background:linear-gradient(0deg,rgba(8,30,34,.85) 0%,rgba(8,30,34,.4) 45%,rgba(8,30,34,0) 65%)}}
+#vf,#vr{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:15% 50%}
+#parch{position:absolute;left:0;top:0;width:300px;height:360px;transform-origin:0 0;opacity:0;transition:opacity .6s;pointer-events:none;display:flex;align-items:center}
+#scr{position:absolute;left:0;top:0;width:520px;height:318px;transform-origin:0 0;opacity:0;transition:opacity .5s;pointer-events:none;overflow:hidden;background:#f4f6f6;font-family:Inter,system-ui,sans-serif;color:#10302f}
+#scr>*{opacity:0}
+#scr .s-h{position:absolute;left:0;right:0;top:0;height:34px;background:#fff;border-bottom:1px solid #e3e8e8;display:flex;align-items:center;gap:14px;padding:0 16px}
+#scr .s-h b{width:58px;height:12px;border-radius:3px;background:#0f5f5a}
+#scr .s-h i{width:34px;height:6px;border-radius:3px;background:#c9d3d3}
+#scr .s-h i:first-of-type{margin-left:auto}
+#scr .cart{position:relative;width:18px;height:15px;border:2px solid #0f5f5a;border-radius:3px 3px 5px 5px;margin-left:8px}
+#scr .cart span{position:absolute;right:-9px;top:-9px;width:14px;height:14px;border-radius:50%;background:#e0a03a;color:#fff;font:700 9px/14px Inter,sans-serif;text-align:center;transform:scale(0)}
+#scr .s-hero{position:absolute;left:16px;right:16px;top:46px;height:92px;border-radius:8px;background:linear-gradient(110deg,#0f5f5a,#2b8a83);padding:18px 20px}
+#scr .s-hero p{height:9px;border-radius:4px;background:rgba(255,255,255,.85);width:46%;margin-bottom:8px}
+#scr .s-hero p+p{width:30%;background:rgba(255,255,255,.5)}
+#scr .s-hero a{display:block;margin-top:14px;width:74px;height:20px;border-radius:10px;background:#e0a03a}
+#scr .s-grid{position:absolute;left:16px;right:16px;top:150px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;opacity:1}
+#scr .s-grid>div{background:#fff;border-radius:8px;padding:8px;box-shadow:0 2px 6px rgba(0,0,0,.06);opacity:0}
+#scr .s-grid s{display:block;height:72px;border-radius:5px;background:linear-gradient(135deg,#dfe7e6,#c7d5d3)}
+#scr .s-grid p{height:6px;border-radius:3px;background:#c9d3d3;margin-top:8px;width:70%}
+#scr .s-grid p+p{width:34%;background:#0f5f5a}
+#scr .s-ok{position:absolute;right:16px;bottom:14px;padding:7px 12px;border-radius:999px;background:#0f5f5a;color:#fff;font-size:12px;font-weight:600;letter-spacing:.01em}
+#scr.on{opacity:1}
+#scr.on .s-h{animation:sIn .5s .15s both}
+#scr.on .s-hero{animation:sIn .6s .55s both}
+#scr.on .s-grid>div{animation:sPop .45s both}
+#scr.on .s-grid>div:nth-child(1){animation-delay:1.05s}
+#scr.on .s-grid>div:nth-child(2){animation-delay:1.3s}
+#scr.on .s-grid>div:nth-child(3){animation-delay:1.55s}
+#scr.on .cart span{animation:sDing .5s 2.1s both}
+#scr.on .s-ok{animation:sStamp .5s 2.7s both}
+@keyframes sIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@keyframes sPop{from{opacity:0;transform:translateY(10px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes sDing{0%{transform:scale(0)}60%{transform:scale(1.4)}100%{transform:scale(1)}}
+@keyframes sStamp{from{opacity:0;transform:scale(1.3)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){#scr.on *{animation-duration:.01s!important;animation-delay:0s!important}}
+#cvs{position:absolute;left:0;top:0;width:480px;height:720px;transform-origin:0 0;opacity:0;transition:opacity .9s;pointer-events:none;color:#17302f;mix-blend-mode:multiply;font-family:Inter,system-ui,sans-serif}
+#cvs h3{position:absolute;left:22px;top:44px;font-size:29px;font-weight:700;letter-spacing:-.02em}
+#cvs h4{position:absolute;left:22px;top:86px;font-size:15px;font-weight:600;color:#1f6f6a}
+#cvs p{position:absolute;left:22px;right:14px;height:24px;line-height:24px;font-size:14px;white-space:nowrap;color:#2c3f3f}
+#cvs p b{font-weight:650;color:#17302f}
+#cvs p.k{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#1f6f6a}
+#cvs p.ft{font-size:12px;color:#5d6e6e}
+#parch div{width:100%;padding:0 24px;font-family:Inter,system-ui,sans-serif;color:#17302f;mix-blend-mode:multiply}
+#parch h3{font-size:19px;font-weight:700;letter-spacing:-.015em;padding-bottom:10px;border-bottom:1.5px solid #1f6f6a;margin-bottom:12px}
+#parch ul{list-style:none;display:grid;gap:15px}
+#parch li b{display:block;font-size:14px;font-weight:650;line-height:1.25}
+#parch li small{display:block;font-size:11.5px;color:#4a5a59;margin-top:2px}
+#bg{background:#0b2529 url(media/ref.jpg) center/cover}
+#panel{position:absolute;left:6vw;top:64px;bottom:0;width:min(36vw,520px);pointer-events:none}
+.blk{position:absolute;left:0;right:0;top:50%;opacity:0;will-change:transform,opacity}
+.blk.live{pointer-events:auto}
+@media (min-width:861px){.blk.top{top:max(21%,192px)}.blk.nar .card{max-width:max(340px,calc(var(--scrl,9999px) - 6vw - 28px))}}
+.hero h1{font-size:clamp(42px,5.2vw,80px);line-height:.98;font-weight:800;letter-spacing:-.03em}
+.hero h1 span{font-weight:400;display:block;color:var(--mute)}
+.hero .role{margin-top:18px;font-size:clamp(17px,1.5vw,22px);font-weight:600;color:var(--acc)}
+.hero .tag{margin-top:6px;font-size:16px;color:var(--mute)}
+.stats{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat{background:var(--glass);border:1px solid var(--line);border-radius:14px;padding:14px 16px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);opacity:0;transform:translateY(14px);transition:opacity .7s,transform .7s cubic-bezier(.2,.8,.2,1)}
+.stat.in{opacity:1;transform:none}
+.stat b{display:block;font-size:26px;font-weight:800;letter-spacing:-.02em}
+.stat span{font-size:13px;color:var(--mute);line-height:1.35;display:block;margin-top:2px}
+.card{background:rgba(8,26,30,.58);border:1px solid var(--line);border-radius:20px;padding:26px 28px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 30px 60px -20px rgba(0,0,0,.45)}
+.kick{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--acc)}
+.kick i{width:8px;height:8px;border-radius:2px;display:inline-block}
+.card h2{font-size:clamp(22px,2vw,30px);font-weight:700;letter-spacing:-.02em;margin:10px 0 4px;line-height:1.15}
+.card .who{font-size:15px;color:var(--mute)}
+.card .when{display:inline-block;margin-top:12px;font-size:13px;font-weight:600;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid var(--line)}
+.card ul{list-style:none;margin-top:16px;display:grid;gap:10px}
+.card li{font-size:15px;line-height:1.45;padding-left:18px;position:relative;color:#d6e6e5}
+.card li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:2px;background:var(--acc)}
+.card li b{color:var(--ink);font-weight:600}
+.card li small{display:block;color:var(--mute);font-size:13px}
+.end .card{text-align:left}
+.end .row{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.end .btn{padding:13px 20px;font-size:15px}
+#pile{position:absolute;left:6vw;bottom:28px;display:flex;gap:8px;flex-wrap:wrap;pointer-events:none}
+.chip{font-size:12px;font-weight:600;padding:6px 10px 6px 8px;border-radius:8px;background:rgba(255,255,255,.08);border:1px solid var(--line);display:flex;align-items:center;gap:7px;opacity:0;transform:translateY(10px) scale(.9);transition:opacity .45s,transform .45s cubic-bezier(.2,.9,.3,1.3)}
+.chip i{width:9px;height:12px;border-radius:2px}
+.chip.in{opacity:1;transform:none}
+#hint{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);pointer-events:none}
+#hint .m{width:22px;height:34px;border:2px solid var(--mute);border-radius:12px;position:relative}
+#hint .m::after{content:"";position:absolute;left:50%;top:6px;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:var(--mute);animation:wh 1.6s infinite}
+@keyframes wh{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(10px)}}
+#static{display:none;padding:110px 6vw 60px;max-width:860px;margin:0 auto}
+#static section{margin-bottom:28px}
+#static .card{margin-bottom:16px}
+@media (prefers-reduced-motion: reduce){#track{display:none}#static{display:block}.stat{opacity:1;transform:none}}
+@media (max-width:860px){
+ nav{display:none}
+ header{padding:0 16px}
+ .cta .btn.li{display:none}
+ #burger{display:inline-flex;background:none;border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:8px 10px;margin-left:6px;cursor:pointer}
+ nav.open{display:flex;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:rgba(8,26,30,.92);backdrop-filter:blur(14px);padding:8px 12px;border-bottom:1px solid var(--line)}
+ #panel{left:16px;right:16px;width:auto;top:auto;bottom:16px;height:46vh}
+ .blk{top:auto;bottom:0}
+ .hero h1{font-size:38px}
+ .hero .role{margin-top:10px;font-size:17px}
+ .stats{margin-top:14px;gap:8px}
+ .stat{padding:10px 12px}.stat b{font-size:20px}.stat span{font-size:12px}
+ .card{padding:18px 18px}
+ .card h2{font-size:21px}.card li{font-size:14px}.card ul{gap:7px;margin-top:10px}
+ #pile{display:none}
+ #hint{display:none}
+}
+</style>
+</head>
+<body>
+<header>
+ <button class="brand" data-u="0" aria-label="Revenir en haut">Maxime <b>Canguilhem</b></button>
+ <nav id="nav">
+  <button data-u="2.55" data-r="1.6,2.9">Formation</button>
+  <button data-u="3.3" data-r="2.9,5.9">Expériences</button>
+  <button data-u="7.05" data-r="5.9,7.5">Aujourd'hui</button>
+  <button data-u="8.6" data-r="7.5,99">Contact</button>
+ </nav>
+ <div class="cta">
+  <a class="btn pri" href="CV_Maxime_Canguilhem.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v3h16v-3"/></svg>CV</a>
+  <a class="btn li" href="https://www.linkedin.com/in/maximecanguilhem/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.01 5 2.5 2.5 0 01.01-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.7c0-1.36-.03-3.1-1.9-3.1-1.9 0-2.2 1.48-2.2 3v5.8H9z"/></svg>LinkedIn</a>
+  <button id="burger" aria-label="Menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+ </div>
+ <div id="prog"></div>
+</header>
+
+<main id="track">
+<div id="stage">
+ <div id="bg"></div>
+ <video id="vf" src="media/fwd.mp4" muted playsinline preload="auto" poster="media/ref.jpg" aria-hidden="true"></video><video id="vr" src="media/rev.mp4" muted playsinline preload="auto" aria-hidden="true" style="opacity:0"></video><div id="parch" aria-hidden="true"><div><h3>Une double culture marketing et projet</h3><ul><li><b>Marketing digital et e-business</b><small>Bac+5</small></li><li><b>Ouverture internationale</b><small>Berkeley · anglais courant</small></li><li><b>Méthodes agiles</b><small>Certifié Product Owner (Scrum)</small></li></ul></div></div><div id="scr" aria-hidden="true"><div class="s-h"><b></b><i></i><i></i><i></i><em class="cart"><span>1</span></em></div><div class="s-hero"><p></p><p></p><a></a></div><div class="s-grid"><div><s></s><p></p><p></p></div><div><s></s><p></p><p></p></div><div><s></s><p></p><p></p></div></div><div class="s-ok">✓ Mis en production</div></div><div id="cvs" aria-hidden="true"><h3>Maxime Canguilhem</h3><h4>Chef de projet SI &amp; digital</h4><p class="k" style="top:164px">En chiffres</p><p class="" style="top:197px"><b>+10 ans</b> d’expérience · <b>+100</b> projets livrés</p><p class="" style="top:228px"><b>+50</b> projets suivis en portefeuille</p><p class="" style="top:261px">Automobile · banque · transport · e-commerce</p><p class="k" style="top:325px">Parcours</p><p class="" style="top:357px"><b>Evolutive</b> — Chef de projets Web &amp; SI · depuis 2021</p><p class="" style="top:389px"><b>Keolis Bordeaux Métropole</b> — Applications web</p><p class="" style="top:421px"><b>Nissan Europe</b> — Product Owner</p><p class="" style="top:453px"><b>PSA · Citroën</b> — Chef de projet digital</p><p class="" style="top:486px"><b>BNP Paribas PF</b> — Assistant chef de projet</p><p class="k" style="top:550px">Formation</p><p class="" style="top:581px">M2 INSEEC · M1 ISEG · Bachelor UC Berkeley</p><p class="" style="top:614px">PSPO (Scrum.org) · Anglais courant</p><p class="ft" style="top:680px">linkedin.com/in/maximecanguilhem</p></div><div id="shade"></div>
+ <div id="grain"></div>
+
+ <div id="panel">
+  <div class="blk hero" data-in="-1" data-out="0.75">
+   <h1><span>Maxime</span>Canguilhem</h1>
+   <div class="role">Chef de projet SI &amp; digital</div>
+   <div class="tag">Piloter. Livrer. Automatiser.</div>
+   <div class="stats">
+    <div class="stat"><b>+10 ans</b><span>d'expérience en pilotage de projets</span></div>
+    <div class="stat"><b>+100</b><span>projets livrés</span></div>
+    <div class="stat"><b>+50</b><span>projets suivis en portefeuille</span></div>
+    <div class="stat"><b>4 secteurs</b><span>automobile · banque · transport · e-commerce</span></div>
+   </div>
+  </div>
+
+  <div class="blk" data-in="2.5" data-out="2.95"><div class="card">
+   <div class="kick"><i style="background:#2f7d84"></i>01 · Formation</div>
+   <h2>Diplômes &amp; certification</h2>
+   <ul>
+    <li><b>M2 Marketing digital &amp; E-business</b><small>INSEEC Paris · 2017</small></li>
+    <li><b>M1 Stratégie communication digitale</b><small>ISEG Bordeaux · 2017</small></li>
+    <li><b>Bachelor Marketing</b><small>University of California, Berkeley · 2015</small></li>
+    <li><b>PSPO — Professional Scrum Product Owner</b><small>Scrum.org · Anglais courant</small></li>
+   </ul>
+  </div></div>
+
+  <div class="blk top" data-in="3.25" data-out="3.62"><div class="card">
+   <div class="kick"><i style="background:#e3b04b"></i>02 · Grands comptes</div>
+   <h2>Assistant chef de projet digital</h2>
+   <div class="who">BNP Paribas Personal Finance · marché automobile</div>
+   <span class="when">Avr. – sept. 2016</span>
+   <ul><li>Veille concurrentielle et benchmark des nouveaux acteurs du financement automobile</li><li>Conduite du changement : formation et accompagnement des équipes métier</li></ul>
+  </div></div>
+
+  <div class="blk top" data-in="3.85" data-out="4.8" data-mout="4.2"><div class="card">
+   <div class="kick"><i style="background:#e3b04b"></i>02 · Grands comptes</div>
+   <h2>Chef de projet digital</h2>
+   <div class="who">PSA · Citroën</div>
+   <span class="when">Mars – sept. 2017</span>
+   <ul><li>Optimisation des parcours utilisateurs B2C du site Citroën</li><li>Pilotage multisite et coordination des agences : briefs, benchmark, SEO</li></ul>
+  </div></div>
+
+  <div class="blk top" data-in="4.4" data-out="4.8" data-off="1"><div class="card">
+   <div class="kick"><i style="background:#e3b04b"></i>02 · Grands comptes</div>
+   <h2>Nissan Europe</h2>
+   <div class="who">Altran · missions internationales, en anglais</div>
+   <ul>
+    <li><b>Product Owner — Configurateurs européens</b><small>Août – déc. 2018 · backlog, roadmap, recette end-to-end</small></li>
+    <li><b>Chef de projet digital — Digital service desk</b><small>Sept. 2017 – juil. 2018 · support technique digital, équipe de 2</small></li>
+   </ul>
+  </div></div>
+
+  <div class="blk top" data-in="5.25" data-out="5.9"><div class="card">
+   <div class="kick"><i style="background:#c96b5c"></i>03 · Transport</div>
+   <h2>Keolis Bordeaux Métropole</h2>
+   <ul>
+    <li><b>Chargé d'applications web et mobiles</b><small>DSI · référent direction Marketing · oct. 2019 – avr. 2021</small></li>
+    <li>Pilotage des applications, cadrage et priorisation des besoins métier</li>
+    <li>Référent O365, accompagnement au changement</li>
+    <li><b>Chef de projet digital — V3 électrique et Phoenix</b><small>LOOM consulting · mars – sept. 2019</small></li>
+   </ul>
+  </div></div>
+
+  <div class="blk nar" data-in="6.85" data-out="7.5"><div class="card">
+   <div class="kick"><i style="background:#8c84d8"></i>04 · Aujourd'hui</div>
+   <h2>Chef de projets Web &amp; SI</h2>
+   <div class="who">Evolutive</div>
+   <span class="when">Depuis avr. 2021</span>
+   <ul>
+    <li>Projets web et e-commerce : PrestaShop, Shopify, WordPress</li>
+    <li>Recueil des besoins, spécifications fonctionnelles</li>
+    <li>Coordination des équipes de dev, TMA et MCO ; recettes et mises en production</li>
+    <li>Plannings, charges, budgets ; avant-vente et chiffrage</li>
+    <li>Automatisation des process avec l'IA (Claude)</li>
+   </ul>
+  </div></div>
+
+  <div class="blk end" data-in="8.15" data-out="99"><div class="card">
+   <div class="kick"><i style="background:#7fd1cf"></i>Et maintenant ?</div>
+   <h2>Discutons de votre prochain projet.</h2>
+   <div class="who">Chef de projet SI &amp; digital · Brive-la-Gaillarde</div>
+   <div class="row">
+    <a class="btn pri" href="CV_Maxime_Canguilhem.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v3h16v-3"/></svg>Télécharger le CV</a>
+    <a class="btn" href="https://www.linkedin.com/in/maximecanguilhem/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.01 5 2.5 2.5 0 01.01-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.7c0-1.36-.03-3.1-1.9-3.1-1.9 0-2.2 1.48-2.2 3v5.8H9z"/></svg>LinkedIn</a>
+   </div>
+  </div></div>
+ </div>
+
+ <div id="pile">
+  <div class="chip" data-at="2.9"><i style="background:#2f7d84"></i>Formation</div>
+  <div class="chip" data-at="4.7"><i style="background:#e3b04b"></i>Grands comptes</div>
+  <div class="chip" data-at="5.9"><i style="background:#c96b5c"></i>Transport</div>
+  <div class="chip" data-at="7.5"><i style="background:#8c84d8"></i>Web &amp; SI</div>
+ </div>
+ <div id="hint"><div class="m"></div>Scrollez pour ouvrir le classeur</div>
+</div>
+</main>
+
+<div id="static">
+ <section class="hero" style="margin-bottom:36px">
+  <h1><span>Maxime</span>Canguilhem</h1>
+  <div class="role">Chef de projet SI &amp; digital</div>
+  <div class="tag">Piloter. Livrer. Automatiser.</div>
+  <div class="stats"><div class="stat"><b>+10 ans</b><span>d'expérience</span></div><div class="stat"><b>+100</b><span>projets livrés</span></div><div class="stat"><b>+50</b><span>projets suivis en portefeuille</span></div><div class="stat"><b>4 secteurs</b><span>automobile · banque · transport · e-commerce</span></div></div>
+ </section>
+</div>
+
+<script>
+document.querySelectorAll('#panel .blk:not(.hero)').forEach(b=>{const s=document.createElement('section');s.innerHTML=b.innerHTML;document.getElementById('static').appendChild(s);});
+setTimeout(()=>document.querySelectorAll('#panel .stat').forEach((s,i)=>setTimeout(()=>s.classList.add('in'),i*160)),400);
+document.getElementById('burger').addEventListener('click',()=>document.getElementById('nav').classList.toggle('open'));
+setTimeout(()=>{if(!window.__3dok){document.getElementById('track').style.display='none';document.getElementById('static').style.display='block';document.querySelectorAll('.stat').forEach(s=>s.classList.add('in'));}},6000);
+</script>
+<script src="player.js"></script>
+</body>
+</html>
